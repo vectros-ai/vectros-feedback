@@ -1,0 +1,70 @@
+name: Bug report
+description: Something in a Vectros package, app, or API does not work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the report. Please use synthetic data only, and leave out API keys, tokens, and
+        real customer data. For a security vulnerability, do not use this form: follow the
+        [security policy](https://github.com/vectros-ai/.github/blob/main/SECURITY.md).
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which package or app?
+      options:
+        - TypeScript SDK (@vectros-ai/sdk)
+        - Python SDK (vectros)
+        - Java SDK (ai.vectros:vectros-sdk)
+        - MCP server (@vectros-ai/mcp-server)
+        - CLI (@vectros-ai/cli)
+        - React components (@vectros-ai/react)
+        - Blueprints (@vectros-ai/blueprints)
+        - Claude Code agent memory (@vectros-ai/claude-code-agent-memory)
+        - Reference app (casework, data workspace, or admin)
+        - Examples
+        - REST API or OpenAPI spec
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The version of the package or app, as your package manager reports it.
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to reproduce
+      description: A minimal reproduction with synthetic data.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Language and runtime version, operating system, and anything else relevant.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: This is not a security vulnerability.
+          required: true
+        - label: I removed secrets and real customer data from this report.
+          required: true
