@@ -1,0 +1,45 @@
+name: Feature request
+description: Suggest a capability or an improvement.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Opening a request does not commit us to a delivery date.
+  - type: dropdown
+    id: component
+    attributes:
+      label: Which package or app?
+      options:
+        - TypeScript SDK (@vectros-ai/sdk)
+        - Python SDK (vectros)
+        - Java SDK (ai.vectros:vectros-sdk)
+        - MCP server (@vectros-ai/mcp-server)
+        - CLI (@vectros-ai/cli)
+        - React components (@vectros-ai/react)
+        - Blueprints (@vectros-ai/blueprints)
+        - Claude Code agent memory (@vectros-ai/claude-code-agent-memory)
+        - Reference app (casework, data workspace, or admin)
+        - Examples
+        - REST API or OpenAPI spec
+        - Documentation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What are you trying to do?
+      description: The problem you want solved, not only the solution you have in mind.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to see?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What have you tried instead?
